@@ -14,7 +14,7 @@ sleep 2
 sudo pacman -S --noconfirm podman distrobox fuse-overlayfs flatpak 
 echo "Hacer que podman use a distrobox sin root.."
 sleep 3
-//Esta parte es para que podman pueda trabar sin la necesidad de usar root. El comando viene de la pagina oficial de Arch. 
+#Esta parte es para que podman pueda trabajar sin la necesidad de usar root. El comando viene de la pagina oficial de Arch. 
 sudo usermod --add-subuids 100000-165535 --add-subgids 100000-165535 $SUDO_USER  //$SUDO_USER es para mandarlo al usuario al no al root.
 echo "Espere un momento.."
 sleep 2
@@ -24,7 +24,7 @@ sudo -u "$SUDO_USER" podman system migrate
 sleep 2
 echo "El sistema debe reiniciar..."
 sleep 2
-sudo reboot  //Reiniciar el sistema para flatpak y cambios que se realizaron.
+sudo reboot  #Reiniciar el sistema para flatpak y cambios que se realizaron.
 ```
 
 Lo anterior lo ejecute como * sudo ./<Nombre_archivo> * ya que este codigo de bash era  para otra maquina. El siguiente codigo se hizo para poder instalar nbc y distroshelf.
@@ -33,12 +33,12 @@ Lo anterior lo ejecute como * sudo ./<Nombre_archivo> * ya que este codigo de ba
 #!/bin/bash
 flatpak update -y
 flatpak install -y com.ranfdev.DistroShelf
-cd //mandarte a la carpeta home
+cd #mandarte a la carpeta home
 echo "Creando carpeta..."
 mkdir -p nbc
 sleep 2
 echo "Entrando a carpeta.."
-cd nbc/ || exit //sino se creo sale del programa
+cd nbc/ || exit #sino se creo sale del programa
 sleep 2
 echo "Descargar archivo nbc en sourceforge"
 sleep 2
@@ -87,6 +87,6 @@ en caso de que no abra la terminal busca en opciones la terminal que tienes inst
 En nuestra terminal actualizamos y descgarmos el paquete nbc.
 
 <img width="1366" height="738" alt="Image" src="https://github.com/user-attachments/assets/37ff0421-37ae-4323-8dde-e6d0a429840f" />
-nota que al usar *nbc -help* nos muestra que el paquete esta instalado.Por lo tanto ya tienes en tu contenedor la aplicación para usar nbc.
+nota que al usar * nbc -help * nos muestra que el paquete esta instalado.Por lo tanto ya tienes en tu contenedor la aplicación para usar nbc.
 
 La información sobre estos pasos la encontré en el video : https://www.youtube.com/watch?v=FR5iL3foKKo&t=709s
