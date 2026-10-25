@@ -87,6 +87,7 @@ en caso de que no abra la terminal busca en opciones la terminal que tienes inst
 En nuestra terminal actualizamos y descgarmos el paquete nbc.
 
 <img width="1366" height="738" alt="Image" src="https://github.com/user-attachments/assets/37ff0421-37ae-4323-8dde-e6d0a429840f" />
+
 nota que al usar * nbc -help * nos muestra que el paquete esta instalado.Por lo tanto ya tienes en tu contenedor la aplicación para usar nbc.
 
 La información sobre estos pasos la encontré en el video : https://www.youtube.com/watch?v=FR5iL3foKKo&t=709s
